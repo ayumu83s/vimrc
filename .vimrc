@@ -56,3 +56,6 @@ match ZenkakuSpace /　/
 " カーソルキーで行の移動
 set whichwrap=b,s[,],<,>
 
+" インクリメンタルサーチ
+set incsearch
+
