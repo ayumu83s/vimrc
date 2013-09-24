@@ -59,3 +59,6 @@ set whichwrap=b,s[,],<,>
 " インクリメンタルサーチ
 set incsearch
 
+" grep結果を別window
+autocmd QuickFixCmdPost *grep* cwindow
+
