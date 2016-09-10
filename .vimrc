@@ -62,3 +62,21 @@ set incsearch
 " grep結果を別window
 autocmd QuickFixCmdPost *grep* cwindow
 
+nnoremap gy "OP
+
+" 折り返しは78文字
+set textwidth=78
+
+" ビープ音を消す
+set visualbell t_vb=
+
+map ,pt <Esc>:%! perltidy -se<CR>
+map ,ptv <Esc>:'<,'>! perltidy -se<CR>
+
+set clipboard+=unnamed
+set clipboard+=autoselect
+
+nnoremap gr gT
+
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
