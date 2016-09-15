@@ -31,7 +31,7 @@ set laststatus=2
 set statusline=%<%f\ %m\ %r%h%w%=\ %{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}(%v,%l)/%L%8P\ 
 
 " マウスを有効化
-set mouse=a
+set mouse=ivn
 
 " 行番号表示
 set number
