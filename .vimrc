@@ -80,3 +80,8 @@ nnoremap gr gT
 
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
+" 折り返しなし
+set nowrap
+set textwidth=0
+set formatoptions=q
+
