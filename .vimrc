@@ -79,9 +79,86 @@ set clipboard+=autoselect
 nnoremap gr gT
 
 nnoremap <ESC><ESC> :nohlsearch<CR>
+map <C-e> :NERDTreeToggle<CR>
 
 " 折り返しなし
 set nowrap
 set textwidth=0
 set formatoptions=q
+
+"set background=dark
+"colorscheme solarized
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+set directory=~/.vim/tmp
+set backupdir=~/.vim/tmp
+set undodir=~/.vim/tmp
+
+set guifont=Osaka-Mono:h16
+
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/Users/itoa/.vim/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/Users/itoa/.vim')
+  call dein#begin('/Users/itoa/.vim')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/itoa/.vim/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+  call dein#add('fatih/vim-go')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/unite-outline')
+  call dein#add('kannokanno/previm')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
+"
+
+" golang
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+
+" NERDTree
+let NERDTreeShowHidden = 1
+
+" unit outline
+let g:unite_split_rule = 'botright'
+noremap <C-o> :Unite -vertical -winwidth=40 outline<Return>
+
+" kannokanno/previm
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+let g:vim_markdown_folding_disabled=1
 
